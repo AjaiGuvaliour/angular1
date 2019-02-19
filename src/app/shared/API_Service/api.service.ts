@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {baseURL} from '../../../environments/environment'
+import {environment} from '../../../environments/environment'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -7,22 +7,22 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiService {
-
+  baseURL= environment.baseURL
   constructor(private http: HttpClient) {
 
    }
    option = new HttpHeaders({'Content-Type':'application/json'})
 
    getService(url: any): Observable<any>{
-    return this.http.get(baseURL+url,{ headers: this.option }).pipe(catchError(this.handleError));
+    return this.http.get(this.baseURL+url,{ headers: this.option }).pipe(catchError(this.handleError));
    }
  
    postService(url: any,data: any): Observable<any>{
-     return this.http.post(baseURL+url,data,{ headers: this.option }).pipe(catchError(this.handleError));
+     return this.http.post(this.baseURL+url,data,{ headers: this.option }).pipe(catchError(this.handleError));
    }
  
    deleteService(url: any): Observable<any>{
-     return this.http.delete(baseURL+url,{ headers: this.option }).pipe(catchError(this.handleError));
+     return this.http.delete(this.baseURL+url,{ headers: this.option }).pipe(catchError(this.handleError));
    }
  
    handleError(error) {

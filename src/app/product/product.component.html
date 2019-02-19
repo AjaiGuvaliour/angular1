@@ -18,7 +18,7 @@
                <div id="dataInfo">
                   <div id="myCarousel" class="carousel" data-ride="carousel" test>
                       <div class="carousel-inner row w-100 mx-auto" #cara="Carousel" [animationDuration]="300">
-                        <div class="carousel-item col-md-4 active">
+                        <div class="carousel-item col-md-4 active" *ngFor="let product of productList; let i = index" [ngClass]="{'active': i <= 2}">
                            <div class="col-item">
                               <div class="pro-inner">
                                  <div class="pro-box-content">
@@ -26,19 +26,19 @@
                                     <div class="pro-label label-pro-new">New</div>
                                     <div class="products">
                                        <!-- Product Image -->
-                                       <a href="#" class="pro-image"><img src="../../assets/img/products/7.jpg" alt="Cras neque metus" /></a>
+                                       <a href="#" class="pro-image"><img [src]="product.img" alt="Cras neque metus" /></a>
                                        <!-- Product Action Buttons -->
                                        <div class="actions">
-                                          <!-- <button type="button" title="Add to Cart" class="button btn-cart"></button> -->
+                                           <button type="button" title="Add to Cart" (click)="addToCart(product)" class="button btn-cart"></button> 
                                           <ul class="add-to-links add-to-links-top">
-                                             <!-- <li><a href="#" class="link-wishlist"></a></li>
-                                             <li><a href="#" class="link-compare"></a></li> -->
+                                            <li><a href="#" class="link-wishlist"></a></li>
+                                             <!-- <li><a href="#" class="link-compare"></a></li>  -->
                                           </ul>
                                        </div>
                                     </div>
                                     <div class="content-box">
                                        <!-- Product Name -->
-                                       <h2 class="product-name"><a href="#">Cras neque metus</a></h2>
+                                       <h2 class="product-name"><a href="#">{{product.product_name}}</a></h2>
                                        <!-- Product Ratings -->
                                        <div class="ratings">
                                           <div class="rating-box">
@@ -47,193 +47,8 @@
                                        </div>
                                        <!-- Product Price Box -->
                                        <div class="price-box">
-                                          <p class="regular-price"><span class="price">$155.00</span></p>
-                                          <p class="old-price"><span class="price">$99.00</span></p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item col-md-4 active">
-                           <div class="col-item">
-                              <div class="pro-inner">
-                                 <div class="pro-box-content">
-                                    <!-- Product Label -->
-                                    <div class="pro-label label-pro-new">New</div>
-                                    <div class="products">
-                                       <!-- Product Image -->
-                                       <a href="#" class="pro-image"><img src="../../assets/img/products/7.jpg" alt="Cras neque metus" /></a>
-                                       <!-- Product Action Buttons -->
-                                       <div class="actions">
-                                          <!-- <button type="button" title="Add to Cart" class="button btn-cart"></button> -->
-                                          <ul class="add-to-links add-to-links-top">
-                                             <!-- <li><a href="#" class="link-wishlist"></a></li>
-                                             <li><a href="#" class="link-compare"></a></li> -->
-                                          </ul>
-                                       </div>
-                                    </div>
-                                    <div class="content-box">
-                                       <!-- Product Name -->
-                                       <h2 class="product-name"><a href="#">Cras neque metus</a></h2>
-                                       <!-- Product Ratings -->
-                                       <div class="ratings">
-                                          <div class="rating-box">
-                                             <div class="rating" style="width:80%"></div>
-                                          </div>
-                                       </div>
-                                       <!-- Product Price Box -->
-                                       <div class="price-box">
-                                          <p class="regular-price"><span class="price">$155.00</span></p>
-                                          <p class="old-price"><span class="price">$99.00</span></p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item col-md-4 active">
-                           <div class="col-item">
-                              <div class="pro-inner">
-                                 <div class="pro-box-content">
-                                    <!-- Product Label -->
-                                    <div class="pro-label label-pro-new">New</div>
-                                    <div class="products">
-                                       <!-- Product Image -->
-                                       <a href="#" class="pro-image"><img src="../../assets/img/products/7.jpg" alt="Cras neque metus" /></a>
-                                       <!-- Product Action Buttons -->
-                                       <div class="actions">
-                                          <!-- <button type="button" title="Add to Cart" class="button btn-cart"></button> -->
-                                          <ul class="add-to-links add-to-links-top">
-                                             <!-- <li><a href="#" class="link-wishlist"></a></li>
-                                             <li><a href="#" class="link-compare"></a></li> -->
-                                          </ul>
-                                       </div>
-                                    </div>
-                                    <div class="content-box">
-                                       <!-- Product Name -->
-                                       <h2 class="product-name"><a href="#">Cras neque metus</a></h2>
-                                       <!-- Product Ratings -->
-                                       <div class="ratings">
-                                          <div class="rating-box">
-                                             <div class="rating" style="width:80%"></div>
-                                          </div>
-                                       </div>
-                                       <!-- Product Price Box -->
-                                       <div class="price-box">
-                                          <p class="regular-price"><span class="price">$155.00</span></p>
-                                          <p class="old-price"><span class="price">$99.00</span></p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item col-md-4">
-                           <div class="col-item">
-                              <div class="pro-inner">
-                                 <div class="pro-box-content">
-                                    <!-- Product Label -->
-                                    <div class="pro-label label-pro-new">New</div>
-                                    <div class="products">
-                                       <!-- Product Image -->
-                                       <a href="#" class="pro-image"><img src="../../assets/img/products/7.jpg" alt="Cras neque metus" /></a>
-                                       <!-- Product Action Buttons -->
-                                       <div class="actions">
-                                          <!-- <button type="button" title="Add to Cart" class="button btn-cart"></button> -->
-                                          <ul class="add-to-links add-to-links-top">
-                                             <!-- <li><a href="#" class="link-wishlist"></a></li>
-                                             <li><a href="#" class="link-compare"></a></li> -->
-                                          </ul>
-                                       </div>
-                                    </div>
-                                    <div class="content-box">
-                                       <!-- Product Name -->
-                                       <h2 class="product-name"><a href="#">Cras neque metus</a></h2>
-                                       <!-- Product Ratings -->
-                                       <div class="ratings">
-                                          <div class="rating-box">
-                                             <div class="rating" style="width:80%"></div>
-                                          </div>
-                                       </div>
-                                       <!-- Product Price Box -->
-                                       <div class="price-box">
-                                          <p class="regular-price"><span class="price">$155.00</span></p>
-                                          <p class="old-price"><span class="price">$99.00</span></p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item col-md-4">
-                           <div class="col-item">
-                              <div class="pro-inner">
-                                 <div class="pro-box-content">
-                                    <!-- Product Label -->
-                                    <div class="pro-label label-pro-new">New</div>
-                                    <div class="products">
-                                       <!-- Product Image -->
-                                       <a href="#" class="pro-image"><img src="../../assets/img/products/7.jpg" alt="Cras neque metus" /></a>
-                                       <!-- Product Action Buttons -->
-                                       <div class="actions">
-                                          <!-- <button type="button" title="Add to Cart" class="button btn-cart"></button> -->
-                                          <ul class="add-to-links add-to-links-top">
-                                             <!-- <li><a href="#" class="link-wishlist"></a></li>
-                                             <li><a href="#" class="link-compare"></a></li> -->
-                                          </ul>
-                                       </div>
-                                    </div>
-                                    <div class="content-box">
-                                       <!-- Product Name -->
-                                       <h2 class="product-name"><a href="#">Cras neque metus</a></h2>
-                                       <!-- Product Ratings -->
-                                       <div class="ratings">
-                                          <div class="rating-box">
-                                             <div class="rating" style="width:80%"></div>
-                                          </div>
-                                       </div>
-                                       <!-- Product Price Box -->
-                                       <div class="price-box">
-                                          <p class="regular-price"><span class="price">$155.00</span></p>
-                                          <p class="old-price"><span class="price">$99.00</span></p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item col-md-4">
-                           <div class="col-item">
-                              <div class="pro-inner">
-                                 <div class="pro-box-content">
-                                    <!-- Product Label -->
-                                    <div class="pro-label label-pro-new">New</div>
-                                    <div class="products">
-                                       <!-- Product Image -->
-                                       <a href="#" class="pro-image"><img src="../../assets/img/products/7.jpg" alt="Cras neque metus" /></a>
-                                       <!-- Product Action Buttons -->
-                                       <div class="actions">
-                                          <!-- <button type="button" title="Add to Cart" class="button btn-cart"></button> -->
-                                          <ul class="add-to-links add-to-links-top">
-                                             <!-- <li><a href="#" class="link-wishlist"></a></li>
-                                             <li><a href="#" class="link-compare"></a></li> -->
-                                          </ul>
-                                       </div>
-                                    </div>
-                                    <div class="content-box">
-                                       <!-- Product Name -->
-                                       <h2 class="product-name"><a href="#">Cras neque metus</a></h2>
-                                       <!-- Product Ratings -->
-                                       <div class="ratings">
-                                          <div class="rating-box">
-                                             <div class="rating" style="width:80%"></div>
-                                          </div>
-                                       </div>
-                                       <!-- Product Price Box -->
-                                       <div class="price-box">
-                                          <p class="regular-price"><span class="price">$155.00</span></p>
-                                          <p class="old-price"><span class="price">$99.00</span></p>
+                                          <p class="regular-price"><span class="price">{{product.regular_price}}</span></p>
+                                          <p class="old-price"><span class="price">{{product.old_price}}</span></p>
                                        </div>
                                     </div>
                                  </div>
@@ -256,24 +71,6 @@
          </div>
    </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
  <div class="tab-product tab-pro-home">
    <div class="container">
       <div class="row">
@@ -291,94 +88,22 @@
          <div class="container">
   
             <div id="dataInfo">
-                 <h2>Information</h2>
                  <div id="myCarousel" class="carousel" data-ride="carousel" test>
                      <div class="carousel-inner row w-100 mx-auto" #vara="Carousel" [animationDuration]="300">
-                       <div class="carousel-item col-md-4 active">
+                       <div class="carousel-item col-md-4 active" *ngFor="let vedio of vedioCarousel; let i = index" [ngClass]="{'active': i <= 2}">
                         <div class="col-item">
                            <div class="blog-inner">
                               <div class="bog-content">
                                  <div class="blog-image">
                                     <!-- Blog Image -->
-                                    <object width="420" height="285"
-                                       data="https://www.youtube.com/embed/4ij_TNRWv_0">
-                                    </object>			
+                                    <iframe [src]="vedio.vedio_Link | vedioSafe">
+                                       <p>Your browser does not support vedio.</p>
+                                     </iframe>			
                                  </div>
                               </div>
                            </div>
                         </div>
                      </div>
-                     <div class="carousel-item col-md-4 active">
-                        <div class="col-item">
-                           <div class="blog-inner">
-                              <div class="bog-content">
-                                 <div class="blog-image">
-                                    <!-- Blog Image -->
-                                    <object width="420" height="285"
-                                       data="https://www.youtube.com/embed/4ij_TNRWv_0">
-                                    </object>			
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item col-md-4 active">
-                        <div class="col-item">
-                           <div class="blog-inner">
-                              <div class="bog-content">
-                                 <div class="blog-image">
-                                    <!-- Blog Image -->
-                                    <object width="420" height="285"
-                                       data="https://www.youtube.com/embed/4ij_TNRWv_0">
-                                    </object>			
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item col-md-4">
-                        <div class="col-item">
-                           <div class="blog-inner">
-                              <div class="bog-content">
-                                 <div class="blog-image">
-                                    <!-- Blog Image -->
-                                    <object width="420" height="285"
-                                       data="https://www.youtube.com/embed/4ij_TNRWv_0">
-                                    </object>			
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item col-md-4">
-                        <div class="col-item">
-                           <div class="blog-inner">
-                              <div class="bog-content">
-                                 <div class="blog-image">
-                                    <!-- Blog Image -->
-                                    <object width="420" height="285"
-                                       data="https://www.youtube.com/embed/4ij_TNRWv_0">
-                                    </object>			
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item col-md-4">
-                        <div class="col-item">
-                           <div class="blog-inner">
-                              <div class="bog-content">
-                                 <div class="blog-image">
-                                    <!-- Blog Image -->
-                                    <object width="420" height="285"
-                                       data="https://www.youtube.com/embed/4ij_TNRWv_0">
-                                    </object>			
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-
                      </div>
                      <a class="carousel-control-prev" role="button" (click)="vara.prev(3)">
                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
