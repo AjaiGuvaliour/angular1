@@ -12,4 +12,15 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  switchPage(event: any){
+     if(event.target.id == 'login-form-link'){
+        document.getElementById('login-form').style.display='block';
+        document.getElementById('register-form').style.display='none';
+     }
+     else{
+      document.getElementById('login-form').style.display='none';
+      document.getElementById('register-form').style.display='block';
+     }
+  }
+
 }

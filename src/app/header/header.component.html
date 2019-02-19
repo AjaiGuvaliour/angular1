@@ -25,6 +25,18 @@
 								<p class="empty">You have no items to Compare.</p>
 							</div>
 						</div>
+						<div class="compare left">
+							<a>Log In</a>
+							<div class="compare-hover-container">
+								<app-login></app-login>
+							</div>
+						</div>
+						<div class="compare left">
+							<a>Sign Up</a>
+							<div class="compare-hover-container">
+								<app-register></app-register>
+							</div>
+						</div>
 						<!-- Header Top Link -->
 						<ul class="top-link left">
 							<li><a href="account.html">Account</a>
@@ -33,7 +45,6 @@
 									<li><a title="My Wishlist" href="wishlist.html">My Wishlist</a></li>
 									<li><a title="My Cart" href="cart.html">My Cart</a></li>
 									<li><a title="Checkout" href="checkout.html">Checkout</a></li>
-									<li><a title="Log In" href="account.html">Log In</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -92,26 +103,16 @@
 									<div class="top-cart-title">
 										<a href="cart.html" class="my-cart">Shopping cart<span>(2)</span></a>
 									</div>
-									<div class="top-cart-content">
+									<div class="top-cart-content" *ngIf="cartData.length">
 										<ol class="mini-pro-list" id="cart-sidebar">
-											<li class="top-cart-item fix">
-												<a class="top-cart-pro-image" href="#"><img alt="Nunc facilisis" src="assets/img/mini-cart/1.jpg"></a>
+											<li class="top-cart-item fix" *ngFor="let list of cartData">
+												<a class="top-cart-pro-image" href="#"><img alt="Nunc facilisis" [src]="list.img"></a>
 												<div class="top-cart-pro-details fix">
 													<a class="btn-remove" title="Remove This Item" href="#">Remove This Item</a>
 													<a class="btn-edit" title="Edit item" href="#">Edit item</a>
-													<p class="top-cart-pro-name"><a href="#">Nunc facilisis</a></p>
-													<strong>1</strong> x
-													<span class="price">$222.00</span>
-												</div>
-											</li>
-											<li class="top-cart-item fix">
-												<a class="top-cart-pro-image" href="#"><img alt="Nunc facilisis" src="assets/img/mini-cart/2.jpg"></a>
-												<div class="top-cart-pro-details fix">
-													<a class="btn-remove" title="Remove This Item" href="#">Remove This Item</a>
-													<a class="btn-edit" title="Edit item" href="#">Edit item</a>
-													<p class="top-cart-pro-name"><a href="#">Nunc facilisis</a></p>
-													<strong>1</strong> x
-													<span class="price">$155.00</span>
+													<p class="top-cart-pro-name"><a href="#">{{list.product_name}}</a></p>
+													<strong>{{countList[list.product_name]}}</strong> x
+													<span class="price">{{list.regular_price}}</span>
 												</div>
 											</li>
 										</ol>

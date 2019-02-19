@@ -9,6 +9,7 @@ import { ProductComponent } from './product/product.component';
 import { LoginComponent } from './login/login.component';
 import { CartListComponent } from './cart-list/cart-list.component';
 import { PaymentComponent } from './payment/payment.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { PaymentComponent } from './payment/payment.component';
     LoginComponent,
     CartListComponent,
     PaymentComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

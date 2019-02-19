@@ -1060,7 +1060,11 @@ button.button:hover {
   margin: 0 -1px;
 }
 .pro-box-content .add-to-links li a.link-wishlist {
-  background: rgba(255, 255, 255, 0.9) url("img/wishlist.png") no-repeat scroll left top;
+  background: rgba(255, 255, 255, 0.9) url("img/wishlist.png") no-repeat;
+  margin: 0 -2px;
+}
+.pro-box-content .add-to-links li a.link-eye {
+  background: rgba(255, 255, 255, 0.9) url("img/eye.png") no-repeat scroll left top;
   margin: 0 -2px;
 }
 .pro-box-content .add-to-links li a.link-compare {
