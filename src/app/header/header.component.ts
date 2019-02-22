@@ -1,18 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SharedServiceService } from '../shared/shared-service.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit,OnDestroy{
 
   constructor(private sharedService: SharedServiceService) { }
    cartData : any = [];
    cartD : boolean = false;
+   subscription: Subscription
   ngOnInit() {
-      this.sharedService.cartList.subscribe(data=>{
+    this.subscription=  this.sharedService.cartList.subscribe(data=>{
         if(data){
           this.dataList(data);
         }
@@ -41,6 +43,10 @@ export class HeaderComponent implements OnInit {
         return res;
 }, {});
     console.log(response)
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit ,Input } from '@angular/core';
 import { ToastrManager } from 'ng6-toastr-notifications';
 import { SharedServiceService } from '../shared/shared-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-selected-product',
@@ -9,10 +10,10 @@ import { SharedServiceService } from '../shared/shared-service.service';
 })
 export class SelectedProductComponent implements OnInit {
   
-  @Input() SelectedProduct;
+  SelectedProduct = JSON.parse(localStorage.getItem('selectedPro'));
   product: any = {};
   cartList: any=[];
-  constructor(private toastr: ToastrManager,private sharedService : SharedServiceService) { }
+  constructor(private router : Router,private toastr: ToastrManager,private sharedService : SharedServiceService) { }
   total:any;
   ngOnInit() {
     if(this.SelectedProduct){
@@ -36,6 +37,7 @@ export class SelectedProductComponent implements OnInit {
     proDetails['qty']=document.getElementById('quantity')['value'];;
     this.sharedService.addCartList(proDetails);
     this.toastr.successToastr('suucessFully Added To Cart');
+    this.router.navigate(['/'])
   }
 
 }

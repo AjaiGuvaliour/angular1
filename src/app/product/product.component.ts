@@ -3,6 +3,7 @@ import {product} from '../shared/sampleJSON/samplePro';
 import {vedios} from '../shared/sampleJSON/vedio'
 import { SharedServiceService } from '../shared/shared-service.service';
 import { ToastrManager } from 'ng6-toastr-notifications';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -11,7 +12,7 @@ import { ToastrManager } from 'ng6-toastr-notifications';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private sharedService: SharedServiceService,private toastr: ToastrManager) { }
+  constructor(private router: Router,private sharedService: SharedServiceService,private toastr: ToastrManager) { }
   productList: any = [];
   product: any = [];
   vedioCarousel: any = [];
@@ -24,9 +25,9 @@ export class ProductComponent implements OnInit {
   cartList : any=[];
 
   addToCart(proDetails: any){
-    this.product = [proDetails];
-    this.popup = !this.popup;
-
+    var data = [proDetails];
+     localStorage.setItem('selectedPro',JSON.stringify(data));
+    this.router.navigate(['/shopping/selectedData']);
   }
 
 }

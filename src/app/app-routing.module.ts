@@ -3,24 +3,52 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductComponent } from './product/product.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { SelectedProductComponent } from './selected-product/selected-product.component';
+import { HomeComponent } from './home/home.component';
+import { UserLoginRegisterComponent } from './user-login-register/user-login-register.component';
+import { ShoppingComponent } from './shopping/shopping.component';
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'product',
+    redirectTo:'home',
     pathMatch:'full'
   },
   {
-    path:'product',
-    component:ProductComponent
+    path: 'home',
+    component:HomeComponent,
+    children:[
+      {
+        path:'',
+        component:ProductComponent
+      }
+    ]
   },
   {
-    path:'login',
-    component:LoginComponent
+    path: 'shopping',
+    component:ShoppingComponent,
+    children:[
+      {
+        path:'login',
+        component:LoginComponent
+      },
+      {
+        path:'register',
+        component:RegisterComponent
+      },
+      {
+        path:'selectedData',
+        component:SelectedProductComponent
+      },
+      {
+        path:'userLoginRegister',
+        component:UserLoginRegisterComponent
+      }
+    ]
   },
   {
-    path:'register',
-    component:RegisterComponent
+    path:'admin',
+    loadChildren:"./admin/admin.module#AdminModule"
   }
 ];
 
