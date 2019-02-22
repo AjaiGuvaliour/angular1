@@ -5,6 +5,8 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { CarouselDirective } from './carousel.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VedioPipe } from './pipe/vedio.pipe';
+import { ToastrModule } from 'ng6-toastr-notifications';
+
 
 @NgModule({
   declarations: [CarouselDirective, VedioPipe],
@@ -14,6 +16,7 @@ import { VedioPipe } from './pipe/vedio.pipe';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   exports:[
     BrowserAnimationsModule,
@@ -22,6 +25,7 @@ import { VedioPipe } from './pipe/vedio.pipe';
     ReactiveFormsModule,
     CarouselDirective,
     VedioPipe,
+    ToastrModule
     
   ]
 })

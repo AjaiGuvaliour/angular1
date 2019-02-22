@@ -101,9 +101,9 @@
 							<div class="top-cart-wrapper left">
 								<div class="top-cart-contain">
 									<div class="top-cart-title">
-										<a href="cart.html" class="my-cart">Shopping cart<span>(2)</span></a>
+										<a class="my-cart" (click)="displayDetails()">Shopping cart<span>(2)</span></a>
 									</div>
-									<div class="top-cart-content" *ngIf="cartData.length">
+									<div class="top-cart-content" *ngIf="cartD">
 										<ol class="mini-pro-list" id="cart-sidebar">
 											<li class="top-cart-item fix" *ngFor="let list of cartData">
 												<a class="top-cart-pro-image" href="#"><img alt="Nunc facilisis" [src]="list.img"></a>

@@ -12,5 +12,6 @@ export class SharedServiceService {
 
   addCartList(data: any){
     this.cartList.next(data);
+    return true;
   }
 }

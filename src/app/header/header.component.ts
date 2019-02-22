@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private sharedService: SharedServiceService) { }
    cartData : any = [];
+   cartD : boolean = false;
   ngOnInit() {
       this.sharedService.cartList.subscribe(data=>{
         if(data){
@@ -19,19 +20,27 @@ export class HeaderComponent implements OnInit {
   }
   countList: any={};
   dataList(data: any){
-    this.cartData=data;
-    function filterArr(dat, key){
-      return dat.reduce( (result, current) => {
-        if(!result[current[key]]){
-          result[current[key]] = 1;
-        } else {
-          result[current[key]] += 1;
-        }
-        return result;    
-      }, {})
-    }
-    this.countList=filterArr(this.cartData,'product_name');
+   this.cartData.push(data)
+   console.log()
+  }
 
+  displayDetails(){
+
+    this.cartD= !this.cartD;
+
+    var response=[];
+    this.cartData.reduce(function (res, value) {
+    if (!res[value.id]) {
+        res[value.id] = {
+            qty: 0,
+            Id: value.id
+        };
+        response.push(res)
+    }
+        res[value.id].qty += value.qty
+        return res;
+}, {});
+    console.log(response)
   }
 
 }

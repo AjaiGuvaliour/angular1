@@ -1,19 +1,15 @@
 <div class="slider-container">
         <app-header></app-header>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
+           
            <!-- Indicators -->
-           <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-           </ol>
            <!-- Wrapper for slides -->
            <div class="carousel-inner">
-              <div class="item active">
-                 <img src="assets/img/slider/2.jpg" alt="Los Angeles">
-              </div>
-              <div class="item">
-                 <img src="assets/img/slider/1.jpg" alt="Chicago">
+              <div class="item" *ngFor="let pro of productData; let i = index" [ngClass]="{'active':i==0}">
+                 <img [src]="pro.img" alt="Los Angeles">
+                 <div class="carousel-caption">
+                     <input type="button" class="btn-primary-outline" (click)="addToCart(pro)" value="Add To Cart">
+                  </div>
               </div>
               <!--       
                  <div class="item">
