@@ -6,6 +6,7 @@ import { CarouselDirective } from './carousel.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VedioPipe } from './pipe/vedio.pipe';
 import { ToastrModule } from 'ng6-toastr-notifications';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ToastrModule } from 'ng6-toastr-notifications';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AngularFontAwesomeModule
   ],
   exports:[
     BrowserAnimationsModule,
@@ -24,6 +26,7 @@ import { ToastrModule } from 'ng6-toastr-notifications';
     FormsModule,
     ReactiveFormsModule,
     CarouselDirective,
+    AngularFontAwesomeModule,
     VedioPipe,
     ToastrModule
     
