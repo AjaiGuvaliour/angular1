@@ -119,6 +119,19 @@
     background: #fff;
     text-align: center;
 }
+.carousel-item{
+    padding-bottom:15px;
+}
 *{
     font-size:15px;
+}
+
+:host /deep/  .ngx-pagination {
+    padding-top:10px;
+    font-size: 15px;
+}
+
+select{
+    width: 51px;
+    height: 33px;
 }

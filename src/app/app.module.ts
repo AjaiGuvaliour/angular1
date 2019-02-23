@@ -14,6 +14,7 @@ import { SelectedProductComponent } from './selected-product/selected-product.co
 import { HomeComponent } from './home/home.component';
 import { UserLoginRegisterComponent } from './user-login-register/user-login-register.component';
 import { ShoppingComponent } from './shopping/shopping.component';
+import { ProductViewComponent } from './product-view/product-view.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ShoppingComponent } from './shopping/shopping.component';
     HomeComponent,
     UserLoginRegisterComponent,
     ShoppingComponent,
+    ProductViewComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,61 @@
+<div class="box">
+    <div class="container">
+     	<div class="row">
+          <div class="carousel-inner row w-100 mx-auto">
+              <div class="carousel-item active col-lg-4 col-md-4 col-sm-4 col-xs-12" *ngFor="let product of overallPro | paginate: { itemsPerPage: itemPerPage, currentPage: p }">
+               <div class="col-item">
+                  <div class="pro-inner">
+                   <div class="pro-box-content">
+                    <!-- Product Label -->
+                    <div class="pro-label label-pro-new">New</div>
+                    <div class="products">
+                     <!-- Product Image -->
+                     <a href="#" class="pro-image"><img [src]="product.img" alt="Cras neque metus" /></a>
+                     <!-- Product Action Buttons -->
+                     <div class="actions">
+                       <button type="button" title="Add to Cart" (click)="addToCart(product)" class="button btn-cart"></button> 
+                        <ul class="add-to-links add-to-links-top">
+                        <!-- <li><a href="#" class="link-wishlist"></a></li> -->
+                         <!-- <li><a href="#" class="link-compare"></a></li>  -->
+                        </ul>
+                     </div>
+                    </div>
+                    <div class="content-box">
+                     <!-- Product Name -->
+                     <h2 class="product-name"><a href="#">{{product.product_name}}</a></h2>
+                     <!-- Product Ratings -->
+                     <div class="ratings">
+                        <div class="rating-box">
+                         <div class="rating" style="width:80%"></div>
+                        </div>
+                     </div>
+                     <!-- Product Price Box -->
+                     <div class="price-box">
+                        <p class="regular-price"><span class="price">{{product.regular_price}}</span></p>
+                        <p class="old-price"><span class="price">{{product.old_price}}</span></p>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+               </div>
+              </div>
+              </div>
+    </div>	
+    <div class="row">
+      <div class="col-md-7 right">
+          <select class="dropDown" [(ngModel)]="dropdownSelect" (ngModelChange)="dropDown($event)">
+              <option  *ngFor="let list of ListItems" [value]="list">{{list}}</option>
+          </select>
+          <p><b>Total_Items</b>: {{overallPro.length}}</p>
+      </div>
+      <div class="col-md-5 right">
+        <pagination-controls (pageChange)="p = $event"  maxSize="4"
+        directionLinks="true"
+        autoHide="true"
+        responsive="true"
+        previousLabel="Previous"
+        nextLabel="Next"></pagination-controls>
+      </div>
+    </div>	 	
+    </div>
+</div>

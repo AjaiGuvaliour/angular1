@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VedioPipe } from './pipe/vedio.pipe';
 import { ToastrModule } from 'ng6-toastr-notifications';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [CarouselDirective, VedioPipe],
@@ -18,7 +18,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    NgxPaginationModule
   ],
   exports:[
     BrowserAnimationsModule,
@@ -28,8 +29,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     CarouselDirective,
     AngularFontAwesomeModule,
     VedioPipe,
-    ToastrModule
-    
+    ToastrModule, 
+    NgxPaginationModule 
   ]
 })
 export class SharedModule { }
