@@ -9,8 +9,8 @@ export class SharedServiceService {
   cartList = new BehaviorSubject([]);
 
   constructor() { }
-
   addCartList(data: any){
+
     this.cartList.next(data);
     return true;
   }
