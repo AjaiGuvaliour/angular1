@@ -2,3 +2,40 @@
     height: 200px;
     overflow: auto;
 }
+
+@media (max-width: 768px) {
+
+img{
+    width: 100px;
+    height: 25px;
+}
+}
+
+.top-cart-contain .my-cart{
+    font-size:15px;
+    background: white;
+    color:black;
+}
+.count{
+ background:red;
+ padding: 7px;
+        position: relative;
+        top: -24px;
+ border-radius: 50%;
+}
+
+
+.top-cart-contain .my-cart:hover{
+    background: red;
+    font-size:15px;
+    color:white;
+
+    .count{
+        background: red;
+        
+        padding: 7px;
+        position: relative;
+        top: -24px;
+        border-radius: 50%;
+       }
+}

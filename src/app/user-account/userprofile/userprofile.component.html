@@ -1,0 +1,53 @@
+<div class="tab-product tab-pro-home">
+    <div class="container">
+  
+        <div class="row">
+            <div class="col-sm-12">
+             <!-- Tab Product Title -->
+             <ul id="producttabs">
+              <li class="item first active">
+                 <h3 class="bestseller">User Account Detail's</h3>
+              </li>
+              <li class="item last">
+                 <h3 class="sale"></h3>
+              </li>
+             </ul>
+            </div>
+        </div>
+    <div class="row">
+      <div class="col-md-3 ">
+           <div class="list-group ">
+              <!-- <div class="col-md-3 text-center profile list-group-item list-group-item-action">
+                  <img class="img" src="../../../assets/img/products-women/10.jpg">
+                  <br>
+                  <hr>
+                  <h3 class="text-center">Ajai</h3>
+                </div> -->
+                <img class="img text-center list-group-item list-group-item-action" src="../../../assets/img/products-women/10.jpg">
+                <hr>
+                <h3 class="text-center">Ajai</h3>
+                <a routerLink="/shopping/useraccount/userprofile/userdetails" routerLinkActive="active" class="list-group-item list-group-item-action">User Detail's</a>
+                <a routerLink="/shopping/useraccount/userprofile/usercartdetails" routerLinkActive="active"   class="list-group-item list-group-item-action">User Purchased Detail's</a>
+              </div> 
+      </div>
+      <div class="col-md-9">
+          <div class="card">
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-12">
+                          <h4>user details</h4>
+                          <hr>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <router-outlet></router-outlet>
+                      </div>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  </div>

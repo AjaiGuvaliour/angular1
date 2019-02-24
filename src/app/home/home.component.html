@@ -8,7 +8,7 @@
         <div class="item" *ngFor="let pro of productData; let i = index" [ngClass]="{'active':i==0}">
            <img [src]="pro.img" alt="Los Angeles">
            <div class="carousel-caption">
-               <input type="button" class="btn-primary-outline" (click)="addToCart(pro)" value="Add To Cart">
+               <input type="button" class="btn-primary-outline" (click)="addToCart(pro)" value="Buy Now">
             </div>
         </div>
         <!--       

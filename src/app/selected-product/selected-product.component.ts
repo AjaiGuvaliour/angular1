@@ -15,6 +15,7 @@ export class SelectedProductComponent implements OnInit {
   product: any = {};
   productList=[];
   cartList: any=[];
+  autoSelectedImage: any;
   colored: boolean= false;
   constructor(private router : Router,private toastr: ToastrManager,private sharedService : SharedServiceService) { }
   total:any;
@@ -27,6 +28,7 @@ export class SelectedProductComponent implements OnInit {
     this.total = this.product.regular_price;
    }
    this.productList=product;
+   this.autoSelectedImage= this.productList[0].img;
   }
   selectedColor(evant: any){
     var value = event.target['value'];
@@ -51,6 +53,10 @@ export class SelectedProductComponent implements OnInit {
     this.sharedService.addCartList(proDetails);
     this.toastr.successToastr('suucessFully Added To Cart');
     this.router.navigate(['/'])
+  }
+
+  autoImageChange(image: any){
+  this.autoSelectedImage=image;
   }
 
 }

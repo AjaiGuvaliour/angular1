@@ -102,23 +102,7 @@
 {
     margin-right: 10px;
 }
-.popupmodel{
-    display: inline-block;
-    text-align: left;
-    vertical-align: middle;
-    position: absolute;
-    /* max-width: 700px; */
-    overflow:auto;
-    /* top: 0; */
-    z-index: 9999;
-    width: 90%;
-    height: 20%;
-    padding: 20px;
-    box-shadow: 0px 2px 6px black;
-    border-radius: 3px;
-    background: #fff;
-    text-align: center;
-}
+
 .carousel-item{
     padding-bottom:15px;
 }
@@ -131,7 +115,34 @@
     font-size: 15px;
 }
 
-select{
+.select{
     width: 51px;
     height: 33px;
+}
+
+
+
+.popupmodel{
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    position: absolute;
+    /* max-width: 700px; */
+    // overflow:auto;
+    // top: 0; 
+    // left:0;
+    z-index: 9999;
+    width: 302px;
+    height: 10%;
+    padding: 20px;
+    box-shadow: 0px 2px 6px black;
+    border-radius: 3px;
+    background: #fff;
+    text-align: center;
+}
+
+.input{
+    border:none;
+    border-bottom:1px solid;
+    width: 196px;
 }
