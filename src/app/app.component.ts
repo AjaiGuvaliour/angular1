@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedServiceService } from './shared/shared-service.service';
 // import {baseURL} from '../environments/environment'
 
 
@@ -8,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
+  constructor(private service: SharedServiceService){}
   ngOnInit(){
     window.onscroll = function() {scrollFunction()};
+    this.service.addCartList(JSON.parse(localStorage.getItem('cartList')).length);
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {

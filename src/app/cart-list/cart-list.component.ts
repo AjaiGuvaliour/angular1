@@ -39,6 +39,10 @@ export class CartListComponent implements OnInit,AfterViewInit{
     this.total();
   }
 
+  checkout(){
+    
+  }
+
   total(){
     var total= document.getElementsByClassName('subtotal');
     var sum=0;
