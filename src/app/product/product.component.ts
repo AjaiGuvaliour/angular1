@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private router: Router,private sharedService: SharedServiceService,private toastr: ToastrManager) { }
+  constructor(private router: Router) { }
   productList: any = [];
   product: any = [];
   vedioCarousel: any = [];

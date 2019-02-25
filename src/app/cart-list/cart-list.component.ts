@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-cart-list',
   templateUrl: './cart-list.component.html',
   styleUrls: ['./cart-list.component.scss']
 })
-export class CartListComponent implements OnInit {
+export class CartListComponent implements OnInit,AfterViewInit{
+
 
   constructor() { }
   dataLoded = false;
@@ -18,15 +19,24 @@ export class CartListComponent implements OnInit {
   this.dataLoded = true;
 
   }
+  
+  ngAfterViewInit(){
+    this.totalSum()
+  }
 
   deleteSelectedItem(pro: any){
     this.cartListData.splice(pro,1);
-    localStorage.setItem('cartList',JSON.stringify(this.cartListData)) 
+    localStorage.setItem('cartList',JSON.stringify(this.cartListData));
+    this.totalSum()
   }
 
   calculation(pro: any,event){
     var data=parseInt(this.cartListData[pro]['regular_price']) *  parseInt(event.target.value);
     document.getElementById("product"+pro).innerHTML =(parseInt(event.target.value) >=1) ?  String(data) : this.cartListData[pro]['regular_price'];
+    this.totalSum();
+  }
+   
+  totalSum(){
     var total= document.getElementsByClassName('subtotal');
     var sum=0;
     for(var i =0;i<total.length;i++){
@@ -34,7 +44,5 @@ export class CartListComponent implements OnInit {
     }
     document.getElementById('Total1').innerHTML=String(sum);
     document.getElementById('Total').innerHTML=String(sum);
-
   }
-
 }

@@ -14,6 +14,7 @@ export class SelectedProductComponent implements OnInit {
   SelectedProduct = JSON.parse(localStorage.getItem('selectedPro'));
   product: any = {};
   productList=[];
+  selected_Color:any;
   cartList: any=[];
   autoSelectedImage: any;
   colored: boolean= false;
