@@ -16,17 +16,22 @@ export class CartListComponent implements OnInit {
   var cartList = JSON.parse(localStorage.getItem('cartList')) || [];
   this.cartListData=cartList;
   this.dataLoded = true;
-
+  this.total();
   }
 
   deleteSelectedItem(pro: any){
     this.cartListData.splice(pro,1);
     localStorage.setItem('cartList',JSON.stringify(this.cartListData)) 
+    this.total();
   }
 
   calculation(pro: any,event){
     var data=parseInt(this.cartListData[pro]['regular_price']) *  parseInt(event.target.value);
     document.getElementById("product"+pro).innerHTML =(parseInt(event.target.value) >=1) ?  String(data) : this.cartListData[pro]['regular_price'];
+    this.total();
+  }
+
+  total(){
     var total= document.getElementsByClassName('subtotal');
     var sum=0;
     for(var i =0;i<total.length;i++){
