@@ -14,6 +14,7 @@ export class SelectedProductComponent implements OnInit {
   SelectedProduct = JSON.parse(localStorage.getItem('selectedPro'));
   product: any = {};
   productList=[];
+  selected_Color:any;
   cartList: any=[];
   autoSelectedImage: any;
   colored: boolean= false;
@@ -69,7 +70,7 @@ export class SelectedProductComponent implements OnInit {
     }
     }
     localStorage.setItem("cartList",JSON.stringify(filteredData))
-    this.sharedService.addCartList(cartList);
+    this.sharedService.addCartList(filteredData.length);
     this.toastr.successToastr('suucessFully Added To Cart');
     this.router.navigate(['/'])
   }

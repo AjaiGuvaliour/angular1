@@ -31,8 +31,9 @@ export class ProductViewComponent implements OnInit {
     this.resetData = overAllproduct.slice(0)
   }
 
-  dropDown(){
-    var value= event.target['value'];
+  dropDown(value: any){
+    // var value= event.target['value'];
+
     this.itemPerPage = value;
   }
   addToCart(proDetails: any){

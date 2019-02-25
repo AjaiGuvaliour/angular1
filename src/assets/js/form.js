@@ -1,3 +1,3 @@
-    $(".input").focus(function() {
-      $(this).parent().addClass("focus");
-    })
+$(".input").focus(function() {
+    $(this).parent().addClass("focus");
+  })

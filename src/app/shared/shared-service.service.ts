@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SharedServiceService {
 
-  cartList = new BehaviorSubject([]);
+  cartList = new BehaviorSubject('');
 
   constructor() { }
   addCartList(data: any){

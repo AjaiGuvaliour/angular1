@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { SharedServiceService } from '../shared/shared-service.service';
 
 @Component({
   selector: 'app-cart-list',
   templateUrl: './cart-list.component.html',
   styleUrls: ['./cart-list.component.scss']
 })
-export class CartListComponent implements OnInit {
+export class CartListComponent implements OnInit,AfterViewInit{
 
-  constructor() { }
+
+  constructor(private service: SharedServiceService) { }
   dataLoded = false;
   cartListData: any = [];
   
@@ -18,11 +20,17 @@ export class CartListComponent implements OnInit {
   this.dataLoded = true;
   this.total();
   }
+  
+  ngAfterViewInit(){
+    this.total()
+  }
 
-  deleteSelectedItem(pro: any){
+  deleteSelectedItem(id:any,pro: any){
+    document.getElementById(id).remove();
     this.cartListData.splice(pro,1);
     localStorage.setItem('cartList',JSON.stringify(this.cartListData)) 
     this.total();
+    this.service.addCartList(this.cartListData.length);
   }
 
   calculation(pro: any,event){
@@ -39,7 +47,5 @@ export class CartListComponent implements OnInit {
     }
     document.getElementById('Total1').innerHTML=String(sum);
     document.getElementById('Total').innerHTML=String(sum);
-
   }
-
 }
