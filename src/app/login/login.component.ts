@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
   }
@@ -21,6 +22,17 @@ export class LoginComponent implements OnInit {
       document.getElementById('login-form').style.display='none';
       document.getElementById('register-form').style.display='block';
      }
+  }
+
+  loggedIn(){
+    console.log('logged')
+    var cartLength = JSON.parse(localStorage.getItem('cartList')).length;
+    if(cartLength){
+          this.router.navigate(['/shopping/payment'])
+    }
+    else{
+      this.router.navigate(['/home'])
+    }
   }
 
 }

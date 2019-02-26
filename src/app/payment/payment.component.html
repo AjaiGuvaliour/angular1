@@ -1,189 +1,210 @@
 
 <br><br>
 <div class="container">
-    <div class="row">
-
-    <div class="col-md-12">
-                      <div id="accordion" class="checkout">
-                          <div class="panel checkout-step">
-                              <div> <span class="checkout-step-number">1</span>
-                                  <h1 class="checkout-step-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" #items (click)="openDiv(items)" ><h1>Permanent Address</h1></a></h1>
-                              </div>
-                              <div id="collapseOne" class="collapse in" style="display:block">
-                                  <div class="checkout-step-body">
-                                      <div class="checout-address-step">
-                                          <div class="row">
-                                              <div class="formBox">
-                                                  <form>
-                                                      <div class="row">
-                                                        <div class="col-sm-12">
-                                                        </div>
-                                                      </div>
-                                          
-                                                      <div class="row">
-                                                        <div class="col-sm-6 col-md-4">
-                                                          <div class="inputBox ">
-                                                            <input type="text" name="" placeholder="Name" class="input">
-                                                          </div>
-                                                        </div>
-                                          
-                                                        <div class="col-sm-6 col-md-4">
-                                                          <div class="inputBox">
-                                                            <input type="text" name="" placeholder="Mobile Number" class="input">
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                          
-                                                      <div class="row">
-                                                        <div class="col-sm-6 col-md-4">
-                                                          <div class="inputBox">
-                                                              <input type="number" name="" placeholder="pin code" class="input">
-                                                            </div>
-                                                        </div>
-                                          
-                                                        <div class="col-sm-6 col-md-4">
-                                                          <div class="inputBox">
-                                                            <input type="text" name="" placeholder="locality" class="input">
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                          
-                                                      <div class="row">
-                                                        <div class="col-sm-12">
-                                                          <div class="inputBox">
-                                                            <textarea class="input" placeholder="address"></textarea>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                      <div class="row">
-                                                          <div class="col-sm-6 col-md-4">
-                                                            <div class="inputBox">
-                                                                <input type="number" name="" placeholder="city" class="input">
+  <div class="row">
+    <div class="col-md-12"> 
+      <!-- Nav tabs -->
+      <div class="card">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-home"></i>  <span>Home</span></a></li>
+          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-user"></i>  <span>Profile</span></a></li>
+          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-envelope-o"></i>  <span>Messages</span></a></li>
+          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-cog"></i>  <span>Settings</span></a></li>
+          <li role="presentation"><a href="#extra" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-plus-square-o"></i>  <span>extra</span></a></li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="home">
+            <div class="container">
+              <div class="row">
+          
+              <div class="col-md-12">
+                                <div id="accordion" class="checkout">
+                                    <div class="panel checkout-step">
+                                        <div id="collapseOne" class="collapse in" style="display:block">
+                                            <div class="checkout-step-body">
+                                                <div class="checout-address-step">
+                                                    <div class="row">
+                                                        <div class="formBox">
+                                                          <form>
+                                                            <div class="row">
+                                                              <div class="col-sm-12">
                                                               </div>
-                                                          </div>
-                                            
-                                                          <div class="col-sm-6 col-md-4">
-                                                            <div class="inputBox">
-                                                              <input type="text" name="" placeholder="state" class="input">
                                                             </div>
-                                                          </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-sm-6 col-md-4">
-                                                              <div class="inputBox">
-                                                                  <input type="number" name="" placeholder="land mark" class="input">
+                                                
+                                                            <div class="row">
+                                                              <div class="col-sm-6 col-md-4">
+                                                                <div class="inputBox ">
+                                                                  <input type="text" name="" placeholder="Name" class="input">
                                                                 </div>
-                                                            </div>
-                                              
-                                                            <div class="col-sm-6 col-md-4">
-                                                              <div class="inputBox">
-                                                                <input type="text" name="" placeholder="Alternative phone number" class="input">
                                                               </div>
-                                                            </div>
-                                                          </div>
-                                                      <div class="row">
-                                                        <div class="col-sm-12">
-                                                          <input type="submit" name="" class="button" value="Send Message">
-                                                        </div>
-                                                      </div>
-                                                  </form>
-                                                </div>
-                                          
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="panel checkout-step">
-                              <div role="tab" id="headingTwo"> <span class="checkout-step-number">2</span>
-                                  <h1 class="checkout-step-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" #items (click)="openDiv(items)"><h1>Delivery Address</h1></a> </h1>
-                              </div>
-                              <div id="collapseTwo" class="panel-collapse collapse" style="display:block">
-                                  <div class="checkout-step-body">
-                                      <div class="checout-address-step">
-                                          <div class="row">
-                                              <div class="formBox">
-                                                  <form>
-                                                      <div class="row">
-                                                        <div class="col-sm-12">
-                                                        </div>
-                                                      </div>
-                                          
-                                                      <div class="row">
-                                                        <div class="col-sm-6 col-md-4">
-                                                          <div class="inputBox ">
-                                                            <input type="text" name="" placeholder="Name" class="input">
-                                                          </div>
-                                                        </div>
-                                          
-                                                        <div class="col-sm-6 col-md-4">
-                                                          <div class="inputBox">
-                                                            <input type="text" name="" placeholder="Mobile Number" class="input">
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                          
-                                                      <div class="row">
-                                                        <div class="col-sm-6 col-md-4">
-                                                          <div class="inputBox">
-                                                              <input type="number" name="" placeholder="pin code" class="input">
-                                                            </div>
-                                                        </div>
-                                          
-                                                        <div class="col-sm-6 col-md-4">
-                                                          <div class="inputBox">
-                                                            <input type="text" name="" placeholder="locality" class="input">
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                          
-                                                      <div class="row">
-                                                        <div class="col-sm-12">
-                                                          <div class="inputBox">
-                                                            <textarea class="input" placeholder="address"></textarea>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                      <div class="row">
-                                                          <div class="col-sm-6 col-md-4">
-                                                            <div class="inputBox">
-                                                                <input type="number" name="" placeholder="city" class="input">
-                                                              </div>
-                                                          </div>
-                                            
-                                                          <div class="col-sm-6 col-md-4">
-                                                            <div class="inputBox">
-                                                              <input type="text" name="" placeholder="state" class="input">
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-sm-6 col-md-4">
-                                                              <div class="inputBox">
-                                                                  <input type="number" name="" placeholder="land mark" class="input">
+                                                
+                                                              <div class="col-sm-6 col-md-4">
+                                                                <div class="inputBox">
+                                                                  <input type="text" name="" placeholder="Mobile Number" class="input">
                                                                 </div>
-                                                            </div>
-                                              
-                                                            <div class="col-sm-6 col-md-4">
-                                                              <div class="inputBox">
-                                                                <input type="text" name="" placeholder="Alternative phone number" class="input">
                                                               </div>
                                                             </div>
+                                                
+                                                            <div class="row">
+                                                              <div class="col-sm-6 col-md-4">
+                                                                <div class="inputBox">
+                                                                    <input type="number" name="" placeholder="pin code" class="input">
+                                                                  </div>
+                                                              </div>
+                                                
+                                                              <div class="col-sm-6 col-md-4">
+                                                                <div class="inputBox">
+                                                                  <input type="text" name="" placeholder="locality" class="input">
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                
+                                                            <div class="row">
+                                                              <div class="col-sm-12">
+                                                                <div class="inputBox">
+                                                                  <textarea class="input" placeholder="address"></textarea>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-6 col-md-4">
+                                                                  <div class="inputBox">
+                                                                      <input type="number" name="" placeholder="city" class="input">
+                                                                    </div>
+                                                                </div>
+                                                  
+                                                                <div class="col-sm-6 col-md-4">
+                                                                  <div class="inputBox">
+                                                                    <input type="text" name="" placeholder="state" class="input">
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                              <div class="row">
+                                                                  <div class="col-sm-6 col-md-4">
+                                                                    <div class="inputBox">
+                                                                        <input type="number" name="" placeholder="land mark" class="input">
+                                                                      </div>
+                                                                  </div>
+                                                    
+                                                                  <div class="col-sm-6 col-md-4">
+                                                                    <div class="inputBox">
+                                                                      <input type="text" name="" placeholder="Alternative phone number" class="input">
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                            <div class="row">
+                                                              <div class="col-sm-12">
+                                                                <input type="submit" name="" class="button" value="Send Message">
+                                                              </div>
+                                                            </div>
+                                                        </form>
                                                           </div>
-                                                      <div class="row">
-                                                        <div class="col-sm-12">
-                                                          <input type="submit" name="" class="button" value="Send Message">
-                                                        </div>
-                                                      </div>
-                                                  </form>
+                                                    
+                                                    </div>
                                                 </div>
-                                          
-                                          </div>
-                                      </div>
-                                  </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+              </div>
+            </div> 
+          </div>
+          <div role="tabpanel" class="tab-pane" id="profile">
+            <div id="invoice">
+              <div class="invoice overflow-auto">
+                  <div style="min-width: 600px">
+                      <main>
+                          <!-- <div class="row contacts">
+                              <div class="col invoice-to">
+                                  <div class="text-gray-light">INVOICE TO:</div>
+                                  <h2 class="to">John Doe</h2>
+                                  <div class="address">796 Silver Harbour, TX 79273, US</div>
+                                  <div class="email"><a href="mailto:john@example.com">john@example.com</a></div>
                               </div>
-                          </div>
-                      </div>
+                              <div class="col invoice-details">
+                                  <h1 class="invoice-id">INVOICE 3-2-1</h1>
+                                  <div class="date">Date of Invoice: 01/10/2018</div>
+                                  <div class="date">Due Date: 30/10/2018</div>
+                              </div>
+                          </div> -->
+                          <table border="0" cellspacing="0" cellpadding="0">
+                              <thead>
+                                  <tr>
+                                      <th>#</th>
+                                      <th class="text-left">DESCRIPTION</th>
+                                      <th class="text-right">HOUR PRICE</th>
+                                      <th class="text-right">HOURS</th>
+                                      <th class="text-right">TOTAL</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td class="no">04</td>
+                                      <td class="text-left">
+                                         to improve your Javascript skills. Subscribe and stay tuned :)
+                                      </td>
+                                      <td class="unit">$0.00</td>
+                                      <td class="qty">100</td>
+                                      <td class="total">$0.00</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="no">01</td>
+                                      <td class="text-left"><h3>Website Design</h3></td>
+                                      <td class="unit">$40.00</td>
+                                      <td class="qty">30</td>
+                                      <td class="total">$1,200.00</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="no">02</td>
+                                      <td class="text-left"><h3>Website Development</h3>Developing a Content Management System-based Website</td>
+                                      <td class="unit">$40.00</td>
+                                      <td class="qty">80</td>
+                                      <td class="total">$3,200.00</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="no">03</td>
+                                      <td class="text-left"><h3>Search Engines Optimization</h3>Optimize the site for search engines (SEO)</td>
+                                      <td class="unit">$40.00</td>
+                                      <td class="qty">20</td>
+                                      <td class="total">$800.00</td>
+                                  </tr>
+                              </tbody>
+                              <tfoot>
+                                  <tr>
+                                      <td colspan="2"></td>
+                                      <td colspan="2">SUBTOTAL</td>
+                                      <td>$5,200.00</td>
+                                  </tr>
+                                  <tr>
+                                      <td colspan="2"></td>
+                                      <td colspan="2">TAX 25%</td>
+                                      <td>$1,300.00</td>
+                                  </tr>
+                                  <tr>
+                                      <td colspan="2"></td>
+                                      <td colspan="2">GRAND TOTAL</td>
+                                      <td>$6,500.00</td>
+                                  </tr>
+                              </tfoot>
+                          </table>
+                      </main>
+                      <footer>
+                      </footer>
                   </div>
+                  <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
+                  <div></div>
+              </div>
+          </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="settings">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passage..</div>
+          <div role="tabpanel" class="tab-pane" id="extra">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passage..</div>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+
+ 

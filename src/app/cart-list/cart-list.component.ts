@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { SharedServiceService } from '../shared/shared-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart-list',
@@ -9,7 +10,7 @@ import { SharedServiceService } from '../shared/shared-service.service';
 export class CartListComponent implements OnInit,AfterViewInit{
 
 
-  constructor(private service: SharedServiceService) { }
+  constructor(private service: SharedServiceService,private router: Router) { }
   dataLoded = false;
   cartListData: any = [];
   
@@ -40,7 +41,7 @@ export class CartListComponent implements OnInit,AfterViewInit{
   }
 
   checkout(){
-    
+       this.router.navigate(['/shopping/userLoginRegister'])
   }
 
   total(){

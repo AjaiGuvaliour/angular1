@@ -1,139 +1,186 @@
-.checkout-wrapper{padding-top: 40px; padding-bottom:40px; background-color: #fafbfa;}
-.checkout{    background-color: #fff;
-    border:1px solid #eaefe9;
-     
-    font-size: 14px;}
-.panel{margin-bottom: 0px;}
 
-.checkout-step {
-     
-    border-top: 1px solid #f2f2f2;
-    color: #666;
-    font-size: 14px;
+.nav-tabs { border-bottom: 2px solid #DDD; }
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+    .nav-tabs > li > a { border: none; color: #ffffff;background: #5a4080; }
+        .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
+        .nav-tabs > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+    .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+.tab-nav > li > a::after { background: #5a4080 none repeat scroll 0% 0%; color: #fff; }
+.tab-pane { padding: 15px 0; }
+.tab-content{padding:20px}
+.nav-tabs > li  {width:20%; text-align:center;}
+.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+body{ background: #EDECEC; padding:50px}
+
+@media all and (max-width:724px){
+.nav-tabs > li > a > span {display:none;}	
+.nav-tabs > li > a {padding: 5px 5px;}
+}
+
+
+
+#invoice{
     padding: 30px;
+}
+
+.invoice {
     position: relative;
+    background-color: #FFF;
+    min-height: 680px;
+    padding: 15px
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    opacity: 1; /* Firefox */
-    font-size:15px;
-  }
-.input:hover{
-  border-bottom:2px solid lightblue;
+
+.invoice header {
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #3989c6
 }
-.checkout-step-number {
-    border-radius: 50%;
-    border: 1px solid #666;
-    display: inline-block;
-    font-size: 12px;
-    height: 32px;
-    margin-right: 26px;
-    padding: 6px;
+
+.invoice .company-details {
+    text-align: right
+}
+
+.invoice .company-details .name {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.invoice .contacts {
+    margin-bottom: 20px
+}
+
+.invoice .invoice-to {
+    text-align: left
+}
+
+.invoice .invoice-to .to {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.invoice .invoice-details {
+    text-align: right
+}
+
+.invoice .invoice-details .invoice-id {
+    margin-top: 0;
+    color: #3989c6
+}
+
+.invoice main {
+    padding-bottom: 50px
+}
+
+.invoice main .thanks {
+    margin-top: -100px;
+    font-size: 2em;
+    margin-bottom: 50px
+}
+
+.invoice main .notices {
+    padding-left: 6px;
+    border-left: 6px solid #3989c6
+}
+
+.invoice main .notices .notice {
+    font-size: 1.2em
+}
+
+.invoice table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px
+}
+
+.invoice table td,.invoice table th {
+    padding: 15px;
+    background: #eee;
+    border-bottom: 1px solid #fff
+}
+
+.invoice table th {
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 16px
+}
+
+.invoice table td h3 {
+    margin: 0;
+    font-weight: 400;
+    color: #3989c6;
+    font-size: 1.2em
+}
+
+.invoice table .qty,.invoice table .total,.invoice table .unit {
+    text-align: right;
+    font-size: 1.2em
+}
+
+.invoice table .no {
+    color: #fff;
+    font-size: 1.6em;
+    background: #3989c6
+}
+
+.invoice table .unit {
+    background: #ddd
+}
+
+.invoice table .total {
+    background: #3989c6;
+    color: #fff
+}
+
+.invoice table tbody tr:last-child td {
+    border: none
+}
+
+.invoice table tfoot td {
+    background: 0 0;
+    border-bottom: none;
+    white-space: nowrap;
+    text-align: right;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-top: 1px solid #aaa
+}
+
+.invoice table tfoot tr:first-child td {
+    border-top: none
+}
+
+.invoice table tfoot tr:last-child td {
+    color: #3989c6;
+    font-size: 1.4em;
+    border-top: 1px solid #3989c6
+}
+
+.invoice table tfoot tr td:first-child {
+    border: none
+}
+
+.invoice footer {
+    width: 100%;
     text-align: center;
-    width: 32px;
+    color: #777;
+    border-top: 1px solid #aaa;
+    padding: 8px 0
 }
-.checkout-step-title{ font-size: 18px;
-    font-weight: 500;
-    vertical-align: middle;display: inline-block; margin: 0px;
-     }
- 
-.checout-address-step{}
-.checout-address-step .form-group{margin-bottom: 18px;display: inline-block;
-    width: 100%;}
 
-.checkout-step-body{padding-left: 60px; padding-top: 30px;}
+@media print {
+    .invoice {
+        font-size: 11px!important;
+        overflow: hidden!important
+    }
 
-.checkout-step-active{display: block;}
-.checkout-step-disabled{display: none;}
+    .invoice footer {
+        position: absolute;
+        bottom: 10px;
+        page-break-after: always
+    }
 
-.checkout-login{}
-.login-phone{display: inline-block;}
-.login-phone:after {
-    content: '+91 - ';
-    font-size: 14px;
-    left: 36px;
-}
-.login-phone:before {
-    content: "";
-    font-style: normal;
-    color: #333;
-    font-size: 18px;
-    left: 12px;
-        display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-.login-phone:after, .login-phone:before {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-.login-phone .form-control {
-    padding-left: 68px;
-    font-size: 14px;
-    
-}
-.checkout-login .btn{height: 42px;     line-height: 1.8;}
- 
-.otp-verifaction{margin-top: 30px;}
-.checkout-sidebar{background-color: #fff;
-    border:1px solid #eaefe9; padding: 30px; margin-bottom: 30px;}
-.checkout-sidebar-merchant-box{background-color: #fff;
-    border:1px solid #eaefe9; margin-bottom: 30px;}
-.checkout-total{border-bottom: 1px solid #eaefe9; padding-bottom: 10px;margin-bottom: 10px; }
-.checkout-invoice{display: inline-block;
-    width: 100%;}
-.checout-invoice-title{    float: left; color: #30322f;}
-.checout-invoice-price{    float: right; color: #30322f;}
-.checkout-charges{display: inline-block;
-    width: 100%;}
-.checout-charges-title{float: left; }
-.checout-charges-price{float: right;}
-.charges-free{color: #43b02a; font-weight: 600;}
-.checkout-payable{display: inline-block;
-    width: 100%; color: #333;}
-.checkout-payable-title{float: left; }
-.checkout-payable-price{float: right;}
-
-.checkout-cart-merchant-box{ padding: 20px;display: inline-block;width: 100%; border-bottom: 1px solid #eaefe9;
- padding-bottom: 20px; }
-.checkout-cart-merchant-name{color: #30322f; float: left;}
-.checkout-cart-merchant-item{ float: right; color: #30322f; }
-.checkout-cart-products{}
-
-.checkout-cart-products .checkout-charges{ padding: 10px 20px;
-    color: #333;}
-.checkout-cart-item{ border-bottom: 1px solid #eaefe9;
-    box-sizing: border-box;
-    display: table;
-    font-size: 12px;
-    padding: 22px 20px;
-    width: 100%;}
- .checkout-item-list{}
-.checkout-item-count{ float: left; }
-.checkout-item-img{width: 60px; float: left;}
-.checkout-item-name-box{ float: left; }
-.checkout-item-title{ color: #30322f; font-size: 14px;  }
-.checkout-item-unit{  }
-.checkout-item-price{float: right;color: #30322f; font-size: 14px; font-weight: 600;}
-
-
-.checkout-viewmore-btn{padding: 10px; text-align: center;}
-
-.header-checkout-item{text-align: right; padding-top: 20px;}
-.checkout-promise-item {
-    background-repeat: no-repeat;
-    background-size: 14px;
-    display: inline-block;
-    margin-left: 20px;
-    padding-left: 24px;
-    color: #30322f;
-}
-.checkout-promise-item i{padding-right: 10px;color: #43b02a;}
-
-.display{
-    display:block;
+    .invoice>div:last-child {
+        page-break-before: always
+    }
 }
