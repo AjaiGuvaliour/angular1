@@ -22,27 +22,13 @@ export class HeaderComponent implements OnInit,OnDestroy{
   }
   countList: any={};
   dataList(data: any){
-   this.cartData.push(data)
-   console.log()
+   this.cartData=data;
   }
 
   displayDetails(){
 
     this.cartD= !this.cartD;
 
-    var response=[];
-    this.cartData.reduce(function (res, value) {
-    if (!res[value.id]) {
-        res[value.id] = {
-            qty: 0,
-            Id: value.id
-        };
-        response.push(res)
-    }
-        res[value.id].qty += value.qty
-        return res;
-}, {});
-    console.log(response)
   }
 
   ngOnDestroy(){

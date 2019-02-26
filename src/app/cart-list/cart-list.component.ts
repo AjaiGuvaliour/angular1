@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { SharedServiceService } from '../shared/shared-service.service';
 
 @Component({
   selector: 'app-cart-list',
@@ -8,7 +9,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 export class CartListComponent implements OnInit,AfterViewInit{
 
 
-  constructor() { }
+  constructor(private service: SharedServiceService) { }
   dataLoded = false;
   cartListData: any = [];
   
@@ -17,26 +18,32 @@ export class CartListComponent implements OnInit,AfterViewInit{
   var cartList = JSON.parse(localStorage.getItem('cartList')) || [];
   this.cartListData=cartList;
   this.dataLoded = true;
-
+  this.total();
   }
   
   ngAfterViewInit(){
-    this.totalSum()
+    this.total()
   }
 
-  deleteSelectedItem(pro: any){
+  deleteSelectedItem(id:any,pro: any){
+    document.getElementById(id).remove();
     this.cartListData.splice(pro,1);
-    localStorage.setItem('cartList',JSON.stringify(this.cartListData));
-    this.totalSum()
+    localStorage.setItem('cartList',JSON.stringify(this.cartListData)) 
+    this.total();
+    this.service.addCartList(this.cartListData.length);
   }
 
   calculation(pro: any,event){
     var data=parseInt(this.cartListData[pro]['regular_price']) *  parseInt(event.target.value);
     document.getElementById("product"+pro).innerHTML =(parseInt(event.target.value) >=1) ?  String(data) : this.cartListData[pro]['regular_price'];
-    this.totalSum();
+    this.total();
   }
-   
-  totalSum(){
+
+  checkout(){
+    
+  }
+
+  total(){
     var total= document.getElementsByClassName('subtotal');
     var sum=0;
     for(var i =0;i<total.length;i++){

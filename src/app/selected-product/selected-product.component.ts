@@ -52,8 +52,7 @@ export class SelectedProductComponent implements OnInit {
   }
 
   addToCart(proDetails: any,total: any){ 
-    console.log(proDetails)  
-    proDetails['qty']=document.getElementById('quantity')['value'];;
+    proDetails['qty']=document.getElementById('quantity')['value'] || 1;
     var cartList = JSON.parse(localStorage.getItem("cartList")) || [];
     cartList.push(proDetails);
     var filteredData = [];
@@ -70,7 +69,7 @@ export class SelectedProductComponent implements OnInit {
     }
     }
     localStorage.setItem("cartList",JSON.stringify(filteredData))
-    this.sharedService.addCartList(cartList);
+    this.sharedService.addCartList(filteredData.length);
     this.toastr.successToastr('suucessFully Added To Cart');
     this.router.navigate(['/'])
   }

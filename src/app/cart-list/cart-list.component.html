@@ -25,7 +25,7 @@
             </thead>
             <!-- <p *ngIf="!cartListData.length">No Data Found....</p> -->
             <tbody >
-              <tr style="border-bottom: 1px solid;"  *ngFor="let product of cartListData;let i = index">
+              <tr style="border-bottom: 1px solid;" [id]="'productOverAll'+i"  *ngFor="let product of cartListData;let i = index">
                 <td data-th="Product">
                   <div class="row">
                     <div class="col-sm-2 hidden-xs"><img [src]="product.img" alt="..." class="img-responsive"/></div>
@@ -39,22 +39,22 @@
                 <td data-th="Quantity">
                   <input type="number"  class="form-control text-center" [value]="product.qty" min="1" (input)="calculation(i,$event)">
                 </td>
-                <td data-th="Subtotal" class="text-center subtotal" [id]="'product'+i">{{product.subTotal}}</td>
+                <td  class="text-center subtotal" [id]="'product'+i">{{product.subTotal}}</td>
                 <td class="actions" data-th="">
-                  <button class="btn btn-danger btn-sm" (click)="deleteSelectedItem(i)"><i class="fa fa-trash-o"></i></button>								
+                  <button class="btn btn-danger btn-sm" (click)="deleteSelectedItem('productOverAll'+i,i)"><i class="fa fa-trash-o"></i></button>								
                 </td>
               </tr>
             </tbody>
             <br><br>
             <tfoot >
               <tr class="visible-xs">
-                <td class="text-center">Total :<strong id="Total1">1.90000</strong></td>
+                <td class="text-center">Total :<strong id="Total1"></strong></td>
               </tr>
               <tr>
                 <td><a routerLink="/shopping/productView" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
                 <td colspan="2" class="hidden-xs"></td>
-                <td class="hidden-xs text-center">Total :<strong id="Total">$1.99</strong></td>
-                <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+                <td class="hidden-xs text-center">Total :<strong id="Total"></strong></td>
+                <td><button  class="btn btn-success btn-block" [disabled]="!cartListData.length" (click)="checkout()">Checkout <i class="fa fa-angle-right"></i></button></td>
               </tr>
             </tfoot>
           </table>
