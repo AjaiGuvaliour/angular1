@@ -44,11 +44,11 @@ export class PaymentComponent implements OnInit,AfterViewInit {
 
   total(){
     var total= document.getElementsByClassName('subtotal');
+    if(total){
     var sum=0;
     for(var i =0;i<total.length;i++){
        sum= sum + parseInt(total[i].innerHTML);
     }
-    document.getElementById('Total1').innerHTML=String(sum);
     document.getElementById('Total').innerHTML=String(sum);
-  }
+  }}
 }
