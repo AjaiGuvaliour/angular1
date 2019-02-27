@@ -1,7 +1,18 @@
-.seprator{
-    border-right:1px solid black;
+// .seprator{
+//     border-right:1px solid black;
+// }
+
+// .container{
+//     border-bottom:1px solid;
+// }
+
+:host/deep/ input[type=submit]{
+    width: 110px;
+    position: relative;
+    right: 141px;
 }
 
-.container{
-    border-bottom:1px solid;
+:host/deep/ input{
+    height: 48px;
+    width: 349px;
 }

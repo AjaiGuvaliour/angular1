@@ -1,210 +1,273 @@
 
-<br><br>
+<div class="shop-page-area page-area">
+<div class="container">
+    <div class="row">
+		  <div class="col-sm-12">
+			 <!-- Tab Product Title -->
+			 <ul id="producttabs">
+				<li class="item first active">
+				   <h3 class="bestseller">Cart Detail's</h3>
+				</li>
+				<li class="item last">
+				   <h3 class="sale"></h3>
+				</li>
+			 </ul>
+      </div>
+      </div>
 <div class="container">
   <div class="row">
     <div class="col-md-12"> 
       <!-- Nav tabs -->
       <div class="card">
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-home"></i>  <span>Home</span></a></li>
-          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-user"></i>  <span>Profile</span></a></li>
-          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-envelope-o"></i>  <span>Messages</span></a></li>
-          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-cog"></i>  <span>Settings</span></a></li>
-          <li role="presentation"><a href="#extra" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-plus-square-o"></i>  <span>extra</span></a></li>
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-home"></i>  <span>CartList</span></a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-user"></i>  <span>Shipping Address</span></a></li>
+          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-cog"></i>  <span>Payment</span></a></li>
         </ul>
         
         <!-- Tab panes -->
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" id="home">
-            <div class="container">
-              <div class="row">
-          
-              <div class="col-md-12">
-                                <div id="accordion" class="checkout">
-                                    <div class="panel checkout-step">
-                                        <div id="collapseOne" class="collapse in" style="display:block">
-                                            <div class="checkout-step-body">
-                                                <div class="checout-address-step">
-                                                    <div class="row">
-                                                        <div class="formBox">
-                                                          <form>
-                                                            <div class="row">
-                                                              <div class="col-sm-12">
-                                                              </div>
-                                                            </div>
-                                                
-                                                            <div class="row">
-                                                              <div class="col-sm-6 col-md-4">
-                                                                <div class="inputBox ">
-                                                                  <input type="text" name="" placeholder="Name" class="input">
-                                                                </div>
-                                                              </div>
-                                                
-                                                              <div class="col-sm-6 col-md-4">
-                                                                <div class="inputBox">
-                                                                  <input type="text" name="" placeholder="Mobile Number" class="input">
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                
-                                                            <div class="row">
-                                                              <div class="col-sm-6 col-md-4">
-                                                                <div class="inputBox">
-                                                                    <input type="number" name="" placeholder="pin code" class="input">
+
+            <div id="invoice">
+                <div class="invoice overflow-auto">
+                    <div style="min-width: 600px">
+                        <main>
+
+                            <table  border="0" cellspacing="0" cellpadding="0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th class="text-left">Image</th>
+                                        <th class="text-left">Name</th>
+                                        <th class="text-left">PRICE</th>
+                                        <th class="text-left">Quantity</th>
+                                        <th class="text-left">SubTotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr   [id]="'productOverAll'+i"  *ngFor="let product of cartListData;let i = index">
+                                        <td class="noo">{{i+1}}</td>
+                                        <td class="text-right">
+                                            <img height="50px" width="50px" [src]="product.img" alt="..." class="img-responsive"/>
+                                        </td>
+                                        <td class="uni">{{product.product_name}}</td>
+                                        <td class="qt">{{product.regular_price}}</td>
+                                        <td class="tota">{{product.qty}}</td>
+                                        <th class="text-left subtotal" [id]="'product'+i">{{product.subTotal}}</th>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    
+                                    <tr>
+                                        <td class="text-right"></td>
+                                        <td class="text-right"></td>
+                                        <td class="text-right"></td>
+                                        <td class="text-right"></td>
+                                        <td class="text-right" >GRAND TOTAL</td>
+                                        <td class="text-left"><span id="Total1"></span></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </main>
+                        <footer>
+                        </footer>
+                    </div>
+                    <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
+                    <div></div>
+                </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="profile">
+              <div class="container">
+                  <div class="row">
+              
+                  <div class="col-md-12">
+                                    <div id="accordion" class="checkout">
+                                        <div class="panel checkout-step">
+                                            <div id="collapseOne" class="collapse in" style="display:block">
+                                                <div class="checkout-step-body">
+                                                    <div class="checout-address-step">
+                                                        <div class="row">
+                                                            <div class="formBox">
+                                                              <form>
+                                                                <div class="row">
+                                                                  <div class="col-sm-12">
                                                                   </div>
-                                                              </div>
-                                                
-                                                              <div class="col-sm-6 col-md-4">
-                                                                <div class="inputBox">
-                                                                  <input type="text" name="" placeholder="locality" class="input">
                                                                 </div>
-                                                              </div>
-                                                            </div>
-                                                
-                                                            <div class="row">
-                                                              <div class="col-sm-12">
-                                                                <div class="inputBox">
-                                                                  <textarea class="input" placeholder="address"></textarea>
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6 col-md-4">
-                                                                  <div class="inputBox">
-                                                                      <input type="number" name="" placeholder="city" class="input">
+                                                    
+                                                                <div class="row">
+                                                                  <div class="col-sm-6 col-md-4">
+                                                                    <div class="inputBox ">
+                                                                      <input type="text" name="" placeholder="Name" class="input">
                                                                     </div>
-                                                                </div>
-                                                  
-                                                                <div class="col-sm-6 col-md-4">
-                                                                  <div class="inputBox">
-                                                                    <input type="text" name="" placeholder="state" class="input">
                                                                   </div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="row">
+                                                    
                                                                   <div class="col-sm-6 col-md-4">
                                                                     <div class="inputBox">
-                                                                        <input type="number" name="" placeholder="land mark" class="input">
+                                                                      <input type="text" name="" placeholder="Mobile Number" class="input">
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                    
+                                                                <div class="row">
+                                                                  <div class="col-sm-6 col-md-4">
+                                                                    <div class="inputBox">
+                                                                        <input type="number" name="" placeholder="pin code" class="input">
                                                                       </div>
                                                                   </div>
                                                     
                                                                   <div class="col-sm-6 col-md-4">
                                                                     <div class="inputBox">
-                                                                      <input type="text" name="" placeholder="Alternative phone number" class="input">
+                                                                      <input type="text" name="" placeholder="locality" class="input">
                                                                     </div>
                                                                   </div>
                                                                 </div>
-                                                            <div class="row">
-                                                              <div class="col-sm-12">
-                                                                <input type="submit" name="" class="button" value="Send Message">
-                                                              </div>
-                                                            </div>
-                                                        </form>
-                                                          </div>
                                                     
+                                                                <div class="row">
+                                                                  <div class="col-sm-12">
+                                                                    <div class="inputBox">
+                                                                      <textarea class="input" placeholder="address"></textarea>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-6 col-md-4">
+                                                                      <div class="inputBox">
+                                                                          <input type="number" name="" placeholder="city" class="input">
+                                                                        </div>
+                                                                    </div>
+                                                      
+                                                                    <div class="col-sm-6 col-md-4">
+                                                                      <div class="inputBox">
+                                                                        <input type="text" name="" placeholder="state" class="input">
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="row">
+                                                                      <div class="col-sm-6 col-md-4">
+                                                                        <div class="inputBox">
+                                                                            <input type="number" name="" placeholder="land mark" class="input">
+                                                                          </div>
+                                                                      </div>
+                                                        
+                                                                      <div class="col-sm-6 col-md-4">
+                                                                        <div class="inputBox">
+                                                                          <input type="text" name="" placeholder="Alternative phone number" class="input">
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                <div class="row">
+                                                                  <div class="col-sm-12">
+                                                                    <input type="submit" name="" class="button" value="Send Message">
+                                                                  </div>
+                                                                </div>
+                                                            </form>
+                                                              </div>
+                                                        
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-              </div>
-            </div> 
-          </div>
-          <div role="tabpanel" class="tab-pane" id="profile">
-            <div id="invoice">
-              <div class="invoice overflow-auto">
-                  <div style="min-width: 600px">
-                      <main>
-                          <!-- <div class="row contacts">
-                              <div class="col invoice-to">
-                                  <div class="text-gray-light">INVOICE TO:</div>
-                                  <h2 class="to">John Doe</h2>
-                                  <div class="address">796 Silver Harbour, TX 79273, US</div>
-                                  <div class="email"><a href="mailto:john@example.com">john@example.com</a></div>
-                              </div>
-                              <div class="col invoice-details">
-                                  <h1 class="invoice-id">INVOICE 3-2-1</h1>
-                                  <div class="date">Date of Invoice: 01/10/2018</div>
-                                  <div class="date">Due Date: 30/10/2018</div>
-                              </div>
-                          </div> -->
-                          <table border="0" cellspacing="0" cellpadding="0">
-                              <thead>
-                                  <tr>
-                                      <th>#</th>
-                                      <th class="text-left">DESCRIPTION</th>
-                                      <th class="text-right">HOUR PRICE</th>
-                                      <th class="text-right">HOURS</th>
-                                      <th class="text-right">TOTAL</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                  <tr>
-                                      <td class="no">04</td>
-                                      <td class="text-left">
-                                         to improve your Javascript skills. Subscribe and stay tuned :)
-                                      </td>
-                                      <td class="unit">$0.00</td>
-                                      <td class="qty">100</td>
-                                      <td class="total">$0.00</td>
-                                  </tr>
-                                  <tr>
-                                      <td class="no">01</td>
-                                      <td class="text-left"><h3>Website Design</h3></td>
-                                      <td class="unit">$40.00</td>
-                                      <td class="qty">30</td>
-                                      <td class="total">$1,200.00</td>
-                                  </tr>
-                                  <tr>
-                                      <td class="no">02</td>
-                                      <td class="text-left"><h3>Website Development</h3>Developing a Content Management System-based Website</td>
-                                      <td class="unit">$40.00</td>
-                                      <td class="qty">80</td>
-                                      <td class="total">$3,200.00</td>
-                                  </tr>
-                                  <tr>
-                                      <td class="no">03</td>
-                                      <td class="text-left"><h3>Search Engines Optimization</h3>Optimize the site for search engines (SEO)</td>
-                                      <td class="unit">$40.00</td>
-                                      <td class="qty">20</td>
-                                      <td class="total">$800.00</td>
-                                  </tr>
-                              </tbody>
-                              <tfoot>
-                                  <tr>
-                                      <td colspan="2"></td>
-                                      <td colspan="2">SUBTOTAL</td>
-                                      <td>$5,200.00</td>
-                                  </tr>
-                                  <tr>
-                                      <td colspan="2"></td>
-                                      <td colspan="2">TAX 25%</td>
-                                      <td>$1,300.00</td>
-                                  </tr>
-                                  <tr>
-                                      <td colspan="2"></td>
-                                      <td colspan="2">GRAND TOTAL</td>
-                                      <td>$6,500.00</td>
-                                  </tr>
-                              </tfoot>
-                          </table>
-                      </main>
-                      <footer>
-                      </footer>
                   </div>
-                  <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
-                  <div></div>
-              </div>
+                </div> 
+    
+    
+    
+    
           </div>
+          <div role="tabpanel" class="tab-pane" id="settings">
+                                <div class="panel panel-info">
+                        <!-- <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Secure Payment</div> -->
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Card Type:</strong></div>
+                                <div class="col-md-12">
+                                    <select id="CreditCardType" name="CreditCardType" class="form-control">
+                                        <option value="5">Visa</option>
+                                        <option value="6">MasterCard</option>
+                                        <option value="7">American Express</option>
+                                        <option value="8">Discover</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Credit Card Number:</strong></div>
+                                <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="" /></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Card CVV:</strong></div>
+                                <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="" /></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <strong>Expiration Date</strong>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <select class="form-control" name="">
+                                        <option value="">Month</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                </select>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <select class="form-control" name="">
+                                        <option value="">Year</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <span>Pay secure using your credit card.</span>
+                                </div>
+                                <div class="col-md-12">
+                                    <br><br>
+                                    <ul class="cards">
+                                        <li class="visa hand">Visa</li>
+                                        <li class="mastercard hand">MasterCard</li>
+                                        <li class="amex hand">Amex</li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <br><br><br>
+                                    <button type="submit" class="btn btn-primary btn-submit-fix">Place Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
           </div>
-          <div role="tabpanel" class="tab-pane" id="settings">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passage..</div>
-          <div role="tabpanel" class="tab-pane" id="extra">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passage..</div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
- 
+</div>
+</div>

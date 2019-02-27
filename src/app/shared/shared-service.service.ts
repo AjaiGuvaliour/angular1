@@ -10,7 +10,7 @@ export class SharedServiceService {
 
   constructor() { }
   addCartList(data: any){
-
+    console.log(data);
     this.cartList.next(data);
     return true;
   }

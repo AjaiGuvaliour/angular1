@@ -15,9 +15,7 @@ export class HeaderComponent implements OnInit,OnDestroy{
    subscription: Subscription
   ngOnInit() {
     this.subscription=  this.sharedService.cartList.subscribe(data=>{
-        if(data){
           this.dataList(data);
-        }
       })
   }
   countList: any={};
